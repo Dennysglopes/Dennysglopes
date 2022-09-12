@@ -1,10 +1,14 @@
-- 👋 Hi, I’m @Dennysglopes
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+REATE DATABASE IF NOT EXISTS db_blog;
 
-<!---
-Dennysglopes/Dennysglopes is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+USE db_blog;
+
+CREATE TABLE tab_clientes(
+	id integer auto_increment primary key,
+	nome varchar(100),
+	crm varchar(20),
+	telefone varchar(20),
+	especialidades varchar(10),
+	foto varchar(200), 
+	data_cadastro timestamp default CURRENT_TIMESTAMP,
+	data_alteracao timestamp
+);
