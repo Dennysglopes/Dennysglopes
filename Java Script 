@@ -1,0 +1,26 @@
+class Player {
+    constructor(name) {
+        this.name = name;
+        this.position = 0;
+        this.speed = 1; // A velocidade inicial
+        this.items = [];
+        this.laps = 0;
+    }
+
+    useItem(item, targetPlayer) {
+        if (item === 'red_shell' && targetPlayer) {
+            targetPlayer.position -= 3;
+            console.log(`${this.name} acertou ${targetPlayer.name} com um casco vermelho!`);
+        } else if (item === 'banana') {
+            console.log(`${this.name} jogou uma banana na pista!`);
+        }
+        this.items = this.items.filter(i => i !== item);
+    }
+
+    move() {
+        this.position += this.speed;
+        console.log(`${this.name} avançou para a posição ${this.position}`);
+    }
+}
+
+module.exports = Player;
